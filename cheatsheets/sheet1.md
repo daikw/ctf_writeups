@@ -6,6 +6,14 @@ echo $IP_ADDRESS > target
 target=$(cat target)
 ```
 
+### UDP Scan
+
+```
+nmap $target -sU
+```
+
+### TCP Scan
+
 ```
 nmap -sC -sV $target -oN nmap
 nmap -p- -sV -sT -A $target
@@ -34,8 +42,4 @@ ncrack -p 22 --user root -P /usr/share/wordlists/rockyou.txt $target
 
 patator ssh_login host=$target user=root password=FILE0 0=/usr/share/wordlists/rockyou.txt -x ignore:mesg='Authentication failed.'
 ```
-
-## wordlists
-
-- /usr/share/wordlists
 
